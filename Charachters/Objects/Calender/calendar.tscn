@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bf618r1ltvybr" path="res://Charachters/Objects/Calender/sprite_0.png" id="1_qdr1m"]
 [ext_resource type="Texture2D" uid="uid://baoi63m5v31ed" path="res://Charachters/Objects/Calender/sprite_1.png" id="2_dthsf"]
 [ext_resource type="Texture2D" uid="uid://bsa16fti2v4e8" path="res://Charachters/Objects/Calender/sprite_2.png" id="3_qpthi"]
-[ext_resource type="Script" path="res://UnluckyCalendar.gd" id="4_rhkbn"]
+[ext_resource type="Script" path="res://Charachters/Objects/Calender/UnluckyCalendar.gd" id="4_cn0l7"]
 [ext_resource type="AudioStream" uid="uid://bsd570kxi8yim" path="res://Charachters/Objects/Calender/uh-oh-101117.mp3" id="5_fs2fa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hcxha"]
@@ -42,7 +42,7 @@ animations = [{
 texture_filter = 1
 position = Vector2(15, 16)
 sprite_frames = SubResource("SpriteFrames_hcxha")
-script = ExtResource("4_rhkbn")
+script = ExtResource("4_cn0l7")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_fs2fa")
