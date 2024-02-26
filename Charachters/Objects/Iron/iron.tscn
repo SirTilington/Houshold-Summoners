@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkhodykj0wv2n"]
+
+[ext_resource type="Texture2D" uid="uid://gmwe4paxdqpn" path="res://Charachters/Objects/Iron/sprite_0.png" id="1_07i0g"]
+[ext_resource type="Texture2D" uid="uid://cuewf2bcfbodp" path="res://Charachters/Objects/Iron/sprite_1.png" id="2_a120p"]
+[ext_resource type="Script" path="res://Iron.gd" id="3_b3yk4"]
+[ext_resource type="AudioStream" uid="uid://cxoq2cqchg0er" path="res://Charachters/Objects/Iron/iron-whoosh-47121.mp3" id="4_3b6e5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ig22q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_07i0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a120p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_07i0g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Iron" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ig22q")
+script = ExtResource("3_b3yk4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3b6e5")
+volume_db = 6.559
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

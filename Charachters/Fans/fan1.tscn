@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgv8lm0clris5"]
+
+[ext_resource type="Texture2D" uid="uid://wolymwjdk0n0" path="res://Charachters/Fans/Fan1Down.png" id="1_alu63"]
+[ext_resource type="Script" path="res://Charachters/Fans/Fan1.gd" id="2_1i7k3"]
+
+[node name="Fan1" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(8, 8)
+texture = ExtResource("1_alu63")
+script = ExtResource("2_1i7k3")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

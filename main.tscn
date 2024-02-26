@@ -1,0 +1,210 @@
+[gd_scene load_steps=8 format=3 uid="uid://20uf1xb00a81"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_43wxd"]
+[ext_resource type="Texture2D" uid="uid://e41ry4dgkrae" path="res://sprite_1.png" id="1_suyqb"]
+[ext_resource type="Texture2D" uid="uid://bw4bl3gk3bs6i" path="res://walls.png" id="2_krkgb"]
+[ext_resource type="PackedScene" uid="uid://dgv8lm0clris5" path="res://Charachters/Fans/fan1.tscn" id="3_8uli0"]
+[ext_resource type="PackedScene" uid="uid://38k0lj0kkkev" path="res://Charachters/Fans/fan2.tscn" id="4_b4awr"]
+[ext_resource type="PackedScene" uid="uid://bxn1nicc0wc8a" path="res://Charachters/Fans/fan3.tscn" id="5_8g2ge"]
+[ext_resource type="AudioStream" uid="uid://b2cfg5pqbf6q7" path="res://the-dying-110458.mp3" id="7_abdo5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_43wxd")
+
+[node name="ground" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_suyqb")
+
+[node name="walls" type="Sprite2D" parent="."]
+position = Vector2(643, 361)
+scale = Vector2(0.998438, 0.994444)
+texture = ExtResource("2_krkgb")
+
+[node name="Fan1Down" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(348, 95)
+
+[node name="Fan1Down2" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(424, 89)
+
+[node name="Fan1Down3" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(401, 46)
+
+[node name="Fan1Down4" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(692, 32)
+
+[node name="Fan1Down5" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(555, 73)
+
+[node name="Fan1Down6" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(891, 42)
+
+[node name="Fan1Down7" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(1002, 113)
+
+[node name="Fan1Down8" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(775, 90)
+
+[node name="Fan1Down9" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(98, 110)
+
+[node name="Fan2" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(222, 144)
+
+[node name="Fan3" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(293, 110)
+
+[node name="Fan4" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(155, 144)
+
+[node name="Fan5" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(196, 73)
+
+[node name="Fan6" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(519, 30)
+
+[node name="Fan7" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(272, 58)
+
+[node name="Fan8" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(619, 32)
+
+[node name="Fan9" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(821, 37)
+
+[node name="Fan10" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(700, 92)
+
+[node name="Fan11" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(1095, 155)
+
+[node name="Fan12" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(1092, 83)
+
+[node name="Fan1" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(1152, 146)
+
+[node name="Fan13" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(994, 59)
+
+[node name="Fan14" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(922, 106)
+
+[node name="Fan15" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(509, 87)
+
+[node name="Fan16" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(331, 156)
+
+[node name="Fan17" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(536, 133)
+
+[node name="Fan18" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(887, 147)
+
+[node name="Fan19" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(731, 136)
+
+[node name="Fan20" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(647, 90)
+
+[node name="Fan21" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(449, 147)
+
+[node name="Fan22" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(822, 154)
+
+[node name="Fan23" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(246, 117)
+
+[node name="Fan24" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(197, 124)
+
+[node name="Fan25" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(380, 150)
+
+[node name="Fan26" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(416, 149)
+
+[node name="Fan27" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(668, 137)
+
+[node name="Fan28" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(402, 136)
+
+[node name="Fan29" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(594, 141)
+
+[node name="Fan30" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(514, 147)
+
+[node name="Fan31" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(643, 147)
+
+[node name="Fan32" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(805, 142)
+
+[node name="Fan33" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(743, 70)
+
+[node name="Fan34" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(843, 87)
+
+[node name="Fan35" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(568, 31)
+
+[node name="Fan36" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(781, 30)
+
+[node name="Fan37" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(613, 84)
+
+[node name="Fan38" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(487, 82)
+
+[node name="Fan39" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(138, 90)
+
+[node name="Fan40" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(344, 56)
+
+[node name="Fan41" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(476, 34)
+
+[node name="Fan42" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(960, 48)
+
+[node name="Fan43" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(969, 99)
+
+[node name="Fan44" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(1091, 128)
+
+[node name="Fan45" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(1054, 109)
+
+[node name="Fan46" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(1052, 65)
+
+[node name="Fan47" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(1149, 93)
+
+[node name="Fan48" parent="." instance=ExtResource("5_8g2ge")]
+position = Vector2(388, 86)
+
+[node name="Fan49" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(280, 90)
+
+[node name="Fan50" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(234, 101)
+
+[node name="Fan51" parent="." instance=ExtResource("3_8uli0")]
+position = Vector2(667, 23)
+
+[node name="Fan52" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(734, 29)
+
+[node name="Fan53" parent="." instance=ExtResource("4_b4awr")]
+position = Vector2(891, 82)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_abdo5")

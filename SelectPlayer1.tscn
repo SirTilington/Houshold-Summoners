@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://sod7jeqqo5gt"]
+
+[ext_resource type="Script" path="res://SelectPlayer1.gd" id="1_l7bhi"]
+[ext_resource type="Texture2D" uid="uid://i0vbrparbe0a" path="res://Charachters/Objects/Sink/sprite_1.png" id="1_la10i"]
+[ext_resource type="Texture2D" uid="uid://bf618r1ltvybr" path="res://Charachters/Objects/Calender/sprite_0.png" id="3_0urr5"]
+[ext_resource type="Texture2D" uid="uid://2w7n5psmi0kn" path="res://Charachters/Objects/Tire/sprite_0.png" id="4_2wb7q"]
+[ext_resource type="Texture2D" uid="uid://gmwe4paxdqpn" path="res://Charachters/Objects/Iron/sprite_0.png" id="5_wnles"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_l7bhi")
+
+[node name="SinkButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 88.0
+offset_top = 45.0
+offset_right = 120.0
+offset_bottom = 77.0
+tooltip_text = "Will drip your enemies away. Let that sink in.
+Deals one Damage per Seconde to an random enemie. 
+10 Health."
+texture_normal = ExtResource("1_la10i")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 521.0
+offset_top = 643.0
+offset_right = 688.0
+offset_bottom = 676.0
+text = "FIGHT!!!!!"
+
+[node name="CalendarButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 211.0
+offset_top = 48.0
+offset_right = 245.0
+offset_bottom = 80.0
+tooltip_text = "Todays your day...or not.
+The calendar has 20 health, but if a target is choosen at random...and it won`t deal any damage."
+texture_normal = ExtResource("3_0urr5")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 318.0
+offset_top = 49.0
+offset_right = 351.0
+offset_bottom = 81.0
+tooltip_text = "This tire won`t tire until he sees his enemies dead. Slow and patient. 
+Deals 1000 Damage after 12 secons, 8 health."
+texture_normal = ExtResource("4_2wb7q")
+
+[node name="IronButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 401.0
+offset_top = 44.0
+offset_right = 441.0
+offset_bottom = 84.0
+tooltip_text = "Iron out your past mistakes. Has 12 health and heals a random ally for 5 every 4 seconds."
+texture_normal = ExtResource("5_wnles")
+
+[connection signal="pressed" from="SinkButton" to="." method="_on_sink_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CalendarButton" to="." method="_on_calendar_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="IronButton" to="." method="_on_iron_button_pressed"]
