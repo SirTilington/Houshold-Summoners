@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://b65pqypem6i3o"]
+
+[ext_resource type="Texture2D" uid="uid://b564mtsw5udeh" path="res://Charachters/Objects/CoffeMaker/sprite_0.png" id="1_k36ou"]
+[ext_resource type="Texture2D" uid="uid://dmauhe20op7bs" path="res://Charachters/Objects/CoffeMaker/sprite_1.png" id="2_xe3da"]
+[ext_resource type="Script" path="res://Charachters/Objects/CoffeMaker/CoffeMaker.gd" id="3_ym7ol"]
+[ext_resource type="AudioStream" uid="uid://b21dv3fknnpct" path="res://Charachters/Objects/CoffeMaker/kettle-pour-into-cup-001-93575.mp3" id="4_ioawi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mg4vc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k36ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_k36ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_k36ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xe3da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xe3da")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_k81tn"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xv76j"]
+gradient = SubResource("Gradient_k81tn")
+width = 32
+height = 10
+
+[node name="CoffeMaker" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(16, 15)
+sprite_frames = SubResource("SpriteFrames_mg4vc")
+script = ExtResource("3_ym7ol")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ioawi")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -15.0
+offset_top = 17.0
+offset_right = 15.0
+offset_bottom = 18.0
+max_value = 20.0
+value = 20.0
+texture_progress = SubResource("GradientTexture2D_xv76j")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

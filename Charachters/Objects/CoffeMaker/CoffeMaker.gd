@@ -1,16 +1,17 @@
 extends AnimatedSprite2D
 
+
 var priorityTarget = false
 var player
-var health = 10
-var maxHealth = 10
+var health = 7
+var maxHealth = 7
 var target
 
 
 func _ready():
 	get_node("TextureProgressBar").max_value = maxHealth
 	var timer = get_node("Timer")
-	timer.wait_time = 1
+	timer.wait_time = 5
 	timer.start()
 	
 	
@@ -20,7 +21,14 @@ func effect() -> void:
 	if player == 2:
 		target = GameLogic.getTargetfromPlayer1()
 	if target != null:
-		target.takeDamage(1)
+		print("Coffee?")
+		print(target.name)
+		print(target.has_method("effect()"))
+		if target.has_method("effect()"):
+			await get_tree().create_timer(0.1).timeout
+			target.effect()
+			print("Its Coffe Time")
+			print(target.name)
 	
 func _on_timer_timeout():
 	effect()
@@ -46,5 +54,3 @@ func heal(amount) -> void:
 		health = health + amount
 	get_node("TextureProgressBar").value = health
 	
-	
-

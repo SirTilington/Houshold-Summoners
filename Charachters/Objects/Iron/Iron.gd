@@ -10,6 +10,7 @@ var target
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
+	get_node("TextureProgressBar").max_value = maxHealth
 	var timer = get_node("Timer")
 	timer.wait_time = 4
 	timer.start()
@@ -36,9 +37,11 @@ func takeDamage(amount) -> void:
 			GameLogic.player2Objects.erase(self)
 		GameLogic.checkWinner()
 		queue_free()
+	get_node("TextureProgressBar").value = health
 		
 func heal(amount) -> void:
 	if (health + amount) > maxHealth:
 		health =  maxHealth
 	else:
 		health = health + amount
+	get_node("TextureProgressBar").value = health

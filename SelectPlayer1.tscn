@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://sod7jeqqo5gt"]
+[gd_scene load_steps=8 format=3 uid="uid://sod7jeqqo5gt"]
 
 [ext_resource type="Script" path="res://SelectPlayer1.gd" id="1_l7bhi"]
 [ext_resource type="Texture2D" uid="uid://i0vbrparbe0a" path="res://Charachters/Objects/Sink/sprite_1.png" id="1_la10i"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://2w7n5psmi0kn" path="res://Charachters/Objects/Tire/sprite_0.png" id="4_2wb7q"]
 [ext_resource type="Texture2D" uid="uid://gmwe4paxdqpn" path="res://Charachters/Objects/Iron/sprite_0.png" id="5_wnles"]
 [ext_resource type="Texture2D" uid="uid://dq86pcu47abut" path="res://shelf-4920612_640.png" id="6_pixy4"]
+[ext_resource type="Texture2D" uid="uid://b564mtsw5udeh" path="res://Charachters/Objects/CoffeMaker/sprite_0.png" id="7_8ymw8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_l7bhi")
@@ -39,6 +40,7 @@ The calendar has 20 health, but if a target is choosen at random...and it won`t 
 texture_normal = ExtResource("3_0urr5")
 
 [node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
 offset_left = 503.0
 offset_top = 436.0
 offset_right = 536.0
@@ -78,8 +80,17 @@ position = Vector2(654, 375)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_pixy4")
 
+[node name="CoffeMakerButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 653.0
+offset_top = 439.0
+offset_right = 693.0
+offset_bottom = 479.0
+texture_normal = ExtResource("7_8ymw8")
+
 [connection signal="pressed" from="SinkButton" to="." method="_on_sink_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CalendarButton" to="." method="_on_calendar_button_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="IronButton" to="." method="_on_iron_button_pressed"]
+[connection signal="pressed" from="CoffeMakerButton" to="." method="_on_coffe_maker_button_pressed"]

@@ -12,6 +12,7 @@ player1Victory.gd::GDScript::-1::1709040646::0::1::::<>Node2D<>::
 player1Victory.tscn::PackedScene::1941549378518857366::1709040672::0::1::::<><>::res://player1Victory.gd<>uid://e41ry4dgkrae::::res://towerPlayer1.png<>uid://bw4bl3gk3bs6i::::res://walls.png<>uid://dgv8lm0clris5::::res://Charachters/Fans/fan1.tscn<>uid://38k0lj0kkkev::::res://Charachters/Fans/fan2.tscn<>uid://bxn1nicc0wc8a::::res://Charachters/Fans/fan3.tscn<>uid://b2cfg5pqbf6q7::::res://the-dying-110458.mp3<>uid://st2fb25726s::::res://Textures-16.png<>uid://cus0iewpt5xjn::::res://sprite_0.png
 player2Victory.tscn::PackedScene::8626668330744917787::1709040672::0::1::::<><>::res://player1Victory.gd<>uid://bw4bl3gk3bs6i::::res://walls.png<>uid://dgv8lm0clris5::::res://Charachters/Fans/fan1.tscn<>uid://38k0lj0kkkev::::res://Charachters/Fans/fan2.tscn<>uid://bxn1nicc0wc8a::::res://Charachters/Fans/fan3.tscn<>uid://b2cfg5pqbf6q7::::res://the-dying-110458.mp3<>uid://st2fb25726s::::res://Textures-16.png<>uid://cus0iewpt5xjn::::res://sprite_0.png<>uid://ceo4ytte2an06::::res://towerPlayer2.png
 README.md::TextFile::-1::1708991449::0::1::::<><>::
+CoffeMaker.gd::GDScript::-1::1709042466::0::1::::<>AnimatedSprite2D<>::
 selectFrame.png::CompressedTexture2D::1219832053950278298::1709022666::1709022747::1::::<><>::
 SelectPlayer1.gd::GDScript::-1::1709024727::0::1::::<>Node2D<>::
 SelectPlayer1.tscn::PackedScene::1292540250062978119::1709041007::0::1::::<><>::res://SelectPlayer1.gd<>uid://i0vbrparbe0a::::res://Charachters/Objects/Sink/sprite_1.png<>uid://bf618r1ltvybr::::res://Charachters/Objects/Calender/sprite_0.png<>uid://2w7n5psmi0kn::::res://Charachters/Objects/Tire/sprite_0.png<>uid://gmwe4paxdqpn::::res://Charachters/Objects/Iron/sprite_0.png<>uid://dq86pcu47abut::::res://shelf-4920612_640.png
@@ -45,7 +46,9 @@ sprite_1.png::CompressedTexture2D::2415864558386834915::1708991449::1708991512::
 sprite_2.png::CompressedTexture2D::3651454162969121973::1708991449::1708991512::1::::<><>::
 uh-oh-101117.mp3::AudioStreamMP3::3657892987216642148::1708991449::1708991511::1::::<><>::
 UnluckyCalendar.gd::GDScript::-1::1708991449::0::1::::<>AnimatedSprite2D<>::
-::res://Charachters/Objects/CoffeMaker/::1709042108
+::res://Charachters/Objects/CoffeMaker/::1709042345
+kettle-pour-into-cup-001-93575.mp3::AudioStreamMP3::4335414415025912907::1709042345::1709042345::1::::<><>::
+coffe_maker.tscn::PackedScene::4625146780619349598::1709042478::0::1::::<><>::uid://b564mtsw5udeh::::res://Charachters/Objects/CoffeMaker/sprite_0.png<>uid://dmauhe20op7bs::::res://Charachters/Objects/CoffeMaker/sprite_1.png<>res://CoffeMaker.gd<>uid://b21dv3fknnpct::::res://Charachters/Objects/CoffeMaker/kettle-pour-into-cup-001-93575.mp3
 sprite_0.png::CompressedTexture2D::4557864952317603163::1709042108::1709042108::1::::<><>::
 sprite_1.png::CompressedTexture2D::8002755268106696044::1709042108::1709042108::1::::<><>::
 ::res://Charachters/Objects/Iron/::1709041007

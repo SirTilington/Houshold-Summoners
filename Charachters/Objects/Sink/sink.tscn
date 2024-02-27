@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ce2ossjsqptm5"]
+[gd_scene load_steps=8 format=3 uid="uid://ce2ossjsqptm5"]
 
 [ext_resource type="Texture2D" uid="uid://bxt0ms1o8v18b" path="res://Charachters/Objects/Sink/sprite_0.png" id="1_dgera"]
 [ext_resource type="Texture2D" uid="uid://i0vbrparbe0a" path="res://Charachters/Objects/Sink/sprite_1.png" id="2_ru50l"]
@@ -22,6 +22,15 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_yetxq"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l0xn6"]
+gradient = SubResource("Gradient_yetxq")
+width = 32
+height = 10
+
 [node name="sink" type="AnimatedSprite2D"]
 texture_filter = 1
 position = Vector2(16, 16)
@@ -33,5 +42,14 @@ stream = ExtResource("3_783aw")
 volume_db = 15.848
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -15.0
+offset_top = 17.0
+offset_right = 15.0
+offset_bottom = 18.0
+max_value = 20.0
+value = 20.0
+texture_progress = SubResource("GradientTexture2D_l0xn6")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

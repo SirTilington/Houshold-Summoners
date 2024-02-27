@@ -6,6 +6,7 @@ var player
 var priorityTarget = true
 
 func _ready():
+	get_node("TextureProgressBar").max_value = maxHealth
 	var timer = get_node("Timer")
 	timer.one_shot = true
 	timer.wait_time = 4
@@ -18,7 +19,6 @@ func _on_timer_timeout():
 	
 func takeDamage(amount) -> void:
 	health = health - amount
-	print(health)
 	if health <= 0:
 		if player == 1:
 			GameLogic.player1Objects.erase(self)
@@ -26,9 +26,12 @@ func takeDamage(amount) -> void:
 			GameLogic.player2Objects.erase(self)
 		GameLogic.checkWinner()
 		queue_free()
+	get_node("TextureProgressBar").value = health
+	
 		
 func heal(amount) -> void:
 	if (health + amount) > maxHealth:
 		health =  maxHealth
 	else:
 		health = health + amount
+	get_node("TextureProgressBar").value = health

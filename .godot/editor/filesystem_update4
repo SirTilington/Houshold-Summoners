@@ -14,3 +14,8 @@ res://player2Victory.tscn
 res://GameLogic.gd
 res://player1Victory.gd
 res://Charachters/Objects/Sink/sink.gd
+res://CoffeMaker.gd
+res://Charachters/Objects/CoffeMaker/coffe_maker.tscn
+res://Charachters/Objects/CoffeMaker/CoffeMaker.gd
+res://Charachters/Objects/Calender/UnluckyCalendar.gd
+res://Charachters/Objects/Iron/Iron.gd

@@ -21,6 +21,8 @@ func getTargetfromPlayer2() -> Node:
 			return i
 	return player2Objects.pick_random()
 	
+	
+
 func checkWinner() -> void:
 	if player1Objects.is_empty():
 		get_tree().change_scene_to_file("res://player2Victory.tscn")

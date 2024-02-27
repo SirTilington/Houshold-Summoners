@@ -14,6 +14,8 @@ var tire = preload("res://Charachters/Objects/Tire/tire.tscn").instantiate()
 var tireSelected = false
 var iron = preload("res://Charachters/Objects/Iron/iron.tscn").instantiate()
 var ironSelected = false
+var coffeMaker = preload("res://Charachters/Objects/CoffeMaker/coffe_maker.tscn").instantiate()
+var coffeMakerSelected = false
 
 func _ready():
 	redFrame.texture = redFramePNG
@@ -74,7 +76,20 @@ func _on_iron_button_pressed():
 			ironSelected = true
 			GameLogic.player1Objects.append(iron)
 			get_node("IronButton").add_child(redFrame.duplicate())
-	
+
+func _on_coffe_maker_button_pressed():
+	if coffeMakerSelected:
+		refundPoints(3)
+		coffeMakerSelected = false
+		GameLogic.player1Objects.erase(coffeMaker)
+		for i in get_node("CoffeMakerButton").get_children():
+			i.queue_free()
+	else:
+		if pointsMax - pointsSpend >= 3:
+			spendPoints(3)
+			coffeMakerSelected = true
+			GameLogic.player1Objects.append(coffeMaker)
+			get_node("CoffeMakerButton").add_child(redFrame.duplicate())
 	
 func spendPoints(amount) -> void:
 	pointsSpend = pointsSpend + amount
@@ -86,6 +101,10 @@ func refundPoints(amount) -> void:
 	get_node("pointsSpendLabel").text = "Points Spend: " + str(pointsSpend) + "/10"
 	get_node("ProgressBar").value = pointsSpend
 	
+
 func _on_start_button_pressed():
 	GameLogic.getReady()
 	get_tree().change_scene_to_file("res://main.tscn")
+
+
+
