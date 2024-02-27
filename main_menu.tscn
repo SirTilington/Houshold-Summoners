@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6ildy1xdyfwl"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_aocoh"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_aocoh")
+
+[node name="SPButto" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 106.0
+offset_right = 775.0
+offset_bottom = 159.0
+text = "Singleplayer"
+
+[node name="MPButton" type="Button" parent="."]
+offset_left = 481.0
+offset_top = 204.0
+offset_right = 772.0
+offset_bottom = 249.0
+text = "Hotseat"
+
+[connection signal="pressed" from="SPButto" to="." method="_on_sp_butto_pressed"]

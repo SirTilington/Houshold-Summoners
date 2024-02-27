@@ -2,3 +2,15 @@ res://Charachters/Objects/Calender/calendar.tscn
 res://Charachters/Objects/Tire/Tire.gd
 res://Charachters/Objects/Iron/iron.tscn
 res://Charachters/Objects/Tire/tire.tscn
+res://Charachters/Objects/Sink/sink.tscn
+res://SelectPlayer1.tscn
+res://SelectPlayer1.gd
+res://MainMenu.gd
+res://main_menu.tscn
+res://main.tscn
+res://player1Victory.tscn
+res://main.gd
+res://player2Victory.tscn
+res://GameLogic.gd
+res://player1Victory.gd
+res://Charachters/Objects/Sink/sink.gd

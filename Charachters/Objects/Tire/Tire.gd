@@ -22,7 +22,8 @@ func effect() -> void:
 		target = GameLogic.getTargetfromPlayer2()
 	if player == 2:
 		target = GameLogic.getTargetfromPlayer1()
-	target.takeDamage(1000)
+	if target != null:
+		target.takeDamage(1000)
 	
 func _on_timer_timeout():
 	effect()

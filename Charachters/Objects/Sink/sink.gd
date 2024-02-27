@@ -7,7 +7,6 @@ var maxHealth = 10
 var target
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
 	var timer = get_node("Timer")
 	timer.wait_time = 1
@@ -19,7 +18,8 @@ func effect() -> void:
 		target = GameLogic.getTargetfromPlayer2()
 	if player == 2:
 		target = GameLogic.getTargetfromPlayer1()
-	target.takeDamage(1)
+	if target != null:
+		target.takeDamage(1)
 	
 func _on_timer_timeout():
 	effect()
