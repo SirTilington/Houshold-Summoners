@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://sod7jeqqo5gt"]
+[gd_scene load_steps=10 format=3 uid="uid://sod7jeqqo5gt"]
 
 [ext_resource type="Script" path="res://SelectPlayer1.gd" id="1_l7bhi"]
 [ext_resource type="Texture2D" uid="uid://i0vbrparbe0a" path="res://Charachters/Objects/Sink/sprite_1.png" id="1_la10i"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://gmwe4paxdqpn" path="res://Charachters/Objects/Iron/sprite_0.png" id="5_wnles"]
 [ext_resource type="Texture2D" uid="uid://dq86pcu47abut" path="res://shelf-4920612_640.png" id="6_pixy4"]
 [ext_resource type="Texture2D" uid="uid://b564mtsw5udeh" path="res://Charachters/Objects/CoffeMaker/sprite_0.png" id="7_8ymw8"]
+[ext_resource type="Texture2D" uid="uid://cxv7sslfpfmj1" path="res://Charachters/Objects/Shower/sprite_0.png" id="8_v542o"]
+[ext_resource type="Texture2D" uid="uid://b5dyt5jw83ahu" path="res://Charachters/Objects/Couch/sprite_0.png" id="9_xwwho"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_l7bhi")
@@ -17,9 +19,12 @@ offset_left = 573.0
 offset_top = 441.0
 offset_right = 605.0
 offset_bottom = 473.0
-tooltip_text = "Will drip your enemies away. Let that sink in.
-Deals one Damage per Seconde to an random enemie. 
-10 Health."
+tooltip_text = "Sink
+
+Health: 10
+Cost: 1
+Will drip your enemies away. Let that sink in.
+Deals one Damage every two seconds to an random enemy. "
 texture_normal = ExtResource("1_la10i")
 
 [node name="StartButton" type="Button" parent="."]
@@ -35,8 +40,12 @@ offset_left = 436.0
 offset_top = 441.0
 offset_right = 470.0
 offset_bottom = 473.0
-tooltip_text = "Todays your day...or not.
-The calendar has 20 health, but if a target is choosen at random...and it won`t deal any damage."
+tooltip_text = "Calendar
+Health: 20
+Cost: 3
+
+Todays your day...or not.
+If a target is choosen it random, the calendar will always get picked."
 texture_normal = ExtResource("3_0urr5")
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -45,8 +54,12 @@ offset_left = 503.0
 offset_top = 436.0
 offset_right = 536.0
 offset_bottom = 468.0
-tooltip_text = "This tire won`t tire until he sees his enemies dead. Slow and patient. 
-Deals 1000 Damage after 12 secons, 8 health."
+tooltip_text = "Rubber Tire
+Health: 8
+Cost: 4
+
+This tire won`t tire until he sees his enemies dead. Slow and patient. 
+Deals 1000 Damage after 12 secons."
 texture_normal = ExtResource("4_2wb7q")
 
 [node name="IronButton" type="TextureButton" parent="."]
@@ -55,7 +68,11 @@ offset_left = 358.0
 offset_top = 437.0
 offset_right = 398.0
 offset_bottom = 477.0
-tooltip_text = "Iron out your past mistakes. Has 12 health and heals a random ally for 5 every 4 seconds."
+tooltip_text = "Iron
+Health: 12
+Cost: 3
+
+Iron out your past mistakes. Heals a random alley every fice seconds for four points."
 texture_normal = ExtResource("5_wnles")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -86,7 +103,40 @@ offset_left = 653.0
 offset_top = 439.0
 offset_right = 693.0
 offset_bottom = 479.0
+tooltip_text = "Coffemaker
+Health: 12
+Cost: 3
+
+An ancient device to activate the spirit of man and machine. Every five seconds, the effect of one of your objects will get activated."
 texture_normal = ExtResource("7_8ymw8")
+
+[node name="ShowerButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 360.0
+offset_top = 374.0
+offset_right = 400.0
+offset_bottom = 414.0
+tooltip_text = "Shower
+Health: 13
+Cost: 5
+
+The shower thinks that she is the better sink. Maybe shes right.
+
+Deals one damage every two seconds, but to every enemy."
+texture_normal = ExtResource("8_v542o")
+
+[node name="Couch" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 438.0
+offset_top = 376.0
+offset_right = 473.0
+offset_bottom = 408.0
+tooltip_text = "Couch
+Health: 5
+Cost: 3
+
+Napping Time. The Couhc increases the time for all emenies effects by one second."
+texture_normal = ExtResource("9_xwwho")
 
 [connection signal="pressed" from="SinkButton" to="." method="_on_sink_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
@@ -94,3 +144,5 @@ texture_normal = ExtResource("7_8ymw8")
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="IronButton" to="." method="_on_iron_button_pressed"]
 [connection signal="pressed" from="CoffeMakerButton" to="." method="_on_coffe_maker_button_pressed"]
+[connection signal="pressed" from="ShowerButton" to="." method="_on_shower_button_pressed"]
+[connection signal="pressed" from="Couch" to="." method="_on_couch_pressed"]

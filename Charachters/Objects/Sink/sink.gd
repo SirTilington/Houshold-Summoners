@@ -10,7 +10,7 @@ var target
 func _ready():
 	get_node("TextureProgressBar").max_value = maxHealth
 	var timer = get_node("Timer")
-	timer.wait_time = 1
+	timer.wait_time = 2
 	timer.start()
 	
 	
@@ -26,6 +26,8 @@ func _on_timer_timeout():
 	effect()
 	get_node("AudioStreamPlayer2D").play()
 	play("default")	
+	print(get_node("Timer").wait_time)
+	print(Time.get_ticks_msec())
 	
 func takeDamage(amount) -> void:
 	health = health - amount

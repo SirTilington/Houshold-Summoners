@@ -16,6 +16,10 @@ var iron = preload("res://Charachters/Objects/Iron/iron.tscn").instantiate()
 var ironSelected = false
 var coffeMaker = preload("res://Charachters/Objects/CoffeMaker/coffe_maker.tscn").instantiate()
 var coffeMakerSelected = false
+var shower = preload("res://Charachters/Objects/Shower/shower.tscn").instantiate()
+var showerSelected = false
+var couch = preload("res://Charachters/Objects/Couch/couch.tscn").instantiate()
+var couchSelected = false
 
 func _ready():
 	redFrame.texture = redFramePNG
@@ -90,6 +94,35 @@ func _on_coffe_maker_button_pressed():
 			coffeMakerSelected = true
 			GameLogic.player1Objects.append(coffeMaker)
 			get_node("CoffeMakerButton").add_child(redFrame.duplicate())
+			
+
+func _on_shower_button_pressed():
+	if showerSelected:
+		refundPoints(4)
+		showerSelected = false
+		GameLogic.player1Objects.erase(shower)
+		for i in get_node("ShowerButton").get_children():
+			i.queue_free()
+	else:
+		if pointsMax - pointsSpend >= 4:
+			spendPoints(4)
+			showerSelected = true
+			GameLogic.player1Objects.append(shower)
+			get_node("ShowerButton").add_child(redFrame.duplicate())
+			
+func _on_couch_pressed():
+	if couchSelected:
+		refundPoints(3)
+		couchSelected = false
+		GameLogic.player1Objects.erase(couch)
+		for i in get_node("Couch").get_children():
+			i.queue_free()
+	else:
+		if pointsMax - pointsSpend >= 3:
+			spendPoints(3)
+			couchSelected = true
+			GameLogic.player1Objects.append(couch)
+			get_node("Couch").add_child(redFrame.duplicate())
 	
 func spendPoints(amount) -> void:
 	pointsSpend = pointsSpend + amount

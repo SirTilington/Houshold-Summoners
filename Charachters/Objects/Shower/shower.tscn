@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfxpvarr15riy"]
+
+[ext_resource type="Texture2D" uid="uid://cxv7sslfpfmj1" path="res://Charachters/Objects/Shower/sprite_0.png" id="1_80sbs"]
+[ext_resource type="Texture2D" uid="uid://dmr7mtlo7sf3v" path="res://Charachters/Objects/Shower/sprite_1.png" id="2_grlcr"]
+[ext_resource type="Script" path="res://Shower.gd" id="3_53ofv"]
+[ext_resource type="AudioStream" uid="uid://c3245yh0lin7c" path="res://Charachters/Objects/Shower/A7AZS4U-shower.mp3" id="4_m34o2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hpbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_80sbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_grlcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_grlcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_grlcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_grlcr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_vr3vi"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_812hr"]
+gradient = SubResource("Gradient_vr3vi")
+width = 32
+height = 10
+
+[node name="Shower" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(17, 16)
+sprite_frames = SubResource("SpriteFrames_7hpbq")
+script = ExtResource("3_53ofv")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_m34o2")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -15.0
+offset_top = 17.0
+offset_right = 15.0
+offset_bottom = 18.0
+max_value = 20.0
+value = 20.0
+texture_progress = SubResource("GradientTexture2D_812hr")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

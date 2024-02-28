@@ -28,6 +28,8 @@ func takeDamage(amount) -> void:
 		queue_free()
 	get_node("TextureProgressBar").value = health
 	
+func effect():
+	pass	
 		
 func heal(amount) -> void:
 	if (health + amount) > maxHealth:

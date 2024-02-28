@@ -17,18 +17,13 @@ func _ready():
 	
 func effect() -> void:
 	if player == 1:
-		target = GameLogic.getTargetfromPlayer2()
+		GameLogic.player1Objects.pick_random()
 	if player == 2:
-		target = GameLogic.getTargetfromPlayer1()
+		GameLogic.player2Objects.pick_random()
 	if target != null:
-		print("Coffee?")
-		print(target.name)
-		print(target.has_method("effect()"))
-		if target.has_method("effect()"):
 			await get_tree().create_timer(0.1).timeout
 			target.effect()
-			print("Its Coffe Time")
-			print(target.name)
+
 	
 func _on_timer_timeout():
 	effect()

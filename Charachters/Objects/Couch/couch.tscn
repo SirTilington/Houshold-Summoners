@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8ay68w2q1n1s"]
+
+[ext_resource type="Texture2D" uid="uid://b5dyt5jw83ahu" path="res://Charachters/Objects/Couch/sprite_0.png" id="1_hyipr"]
+[ext_resource type="Texture2D" uid="uid://6vh7l4nxjuw7" path="res://Charachters/Objects/Couch/sprite_1.png" id="2_ypsvh"]
+[ext_resource type="Texture2D" uid="uid://c8wspyqppk2jp" path="res://Charachters/Objects/Couch/sprite_2.png" id="3_k5lcy"]
+[ext_resource type="Texture2D" uid="uid://bk66kjuihh4hn" path="res://Charachters/Objects/Couch/sprite_3.png" id="4_xc6gw"]
+[ext_resource type="Texture2D" uid="uid://b27fx81bdw6du" path="res://Charachters/Objects/Couch/sprite_4.png" id="5_f1x5k"]
+[ext_resource type="Script" path="res://Charachters/Objects/Couch/couch.gd" id="6_d8hi7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjuwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hyipr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ypsvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k5lcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xc6gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f1x5k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_k81tn"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mxand"]
+gradient = SubResource("Gradient_k81tn")
+width = 32
+height = 10
+
+[node name="Couch" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(16, 16)
+scale = Vector2(1.138, 1)
+sprite_frames = SubResource("SpriteFrames_qjuwr")
+script = ExtResource("6_d8hi7")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1, 3)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -15.0
+offset_top = 17.0
+offset_right = 15.0
+offset_bottom = 18.0
+max_value = 20.0
+value = 20.0
+texture_progress = SubResource("GradientTexture2D_mxand")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
