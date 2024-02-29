@@ -1,37 +1,43 @@
 extends AnimatedSprite2D
 
-
 var priorityTarget = false
 var player
-var health = 7
-var maxHealth = 7
+var health = 10
+var maxHealth = 10
 var target
 
 
 func _ready():
 	get_node("TextureProgressBar").max_value = maxHealth
 	var timer = get_node("Timer")
-	timer.wait_time = 5
+	timer.wait_time = 2
 	timer.start()
 	
 	
 func effect() -> void:
 	if player == 1:
-		GameLogic.player1Objects.pick_random()
+		target = GameLogic.getTargetfromPlayer2()
+		for i in GameLogic.player2Objects:
+			if i.health < target.health:
+				target = i
 	if player == 2:
-		GameLogic.player2Objects.pick_random()
+		target = GameLogic.getTargetfromPlayer1()
+		for i in GameLogic.player1Objects:
+			if i.health < target.health:
+				target = i
 	if target != null:
-			await get_tree().create_timer(0.1).timeout
-			target.effect()
-
+		target.takeDamage(1)
 	
 func _on_timer_timeout():
 	effect()
 	get_node("AudioStreamPlayer2D").play()
 	play("default")	
+	print(get_node("Timer").wait_time)
+	print(Time.get_ticks_msec())
 	
 func takeDamage(amount) -> void:
 	health = health - amount
+	print(health)
 	if health <= 0:
 		if player == 1:
 			GameLogic.player1Objects.erase(self)
@@ -47,4 +53,3 @@ func heal(amount) -> void:
 	else:
 		health = health + amount
 	get_node("TextureProgressBar").value = health
-	

@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://2aca6yo3uqni"]
+
+[ext_resource type="Texture2D" uid="uid://bt173774s2kxl" path="res://Charachters/Objects/TheBrick/New Piskel(1).png" id="1_478ak"]
+[ext_resource type="Script" path="res://Charachters/Objects/TheBrick/the_brick.gd" id="2_tmp45"]
+[ext_resource type="AudioStream" uid="uid://bduc3coa4dv1v" path="res://Charachters/Objects/TheBrick/man-scream-121085.mp3" id="3_7ayig"]
+
+[sub_resource type="Gradient" id="Gradient_8q1ii"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x6rn0"]
+gradient = SubResource("Gradient_8q1ii")
+width = 32
+height = 10
+
+[node name="TheBrick" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(16, 15)
+texture = ExtResource("1_478ak")
+script = ExtResource("2_tmp45")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7ayig")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -15.0
+offset_top = 17.0
+offset_right = 15.0
+offset_bottom = 18.0
+max_value = 20.0
+value = 20.0
+texture_progress = SubResource("GradientTexture2D_x6rn0")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://sod7jeqqo5gt"]
+[gd_scene load_steps=12 format=3 uid="uid://sod7jeqqo5gt"]
 
 [ext_resource type="Script" path="res://SelectPlayer1.gd" id="1_l7bhi"]
 [ext_resource type="Texture2D" uid="uid://i0vbrparbe0a" path="res://Charachters/Objects/Sink/sprite_1.png" id="1_la10i"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b564mtsw5udeh" path="res://Charachters/Objects/CoffeMaker/sprite_0.png" id="7_8ymw8"]
 [ext_resource type="Texture2D" uid="uid://cxv7sslfpfmj1" path="res://Charachters/Objects/Shower/sprite_0.png" id="8_v542o"]
 [ext_resource type="Texture2D" uid="uid://b5dyt5jw83ahu" path="res://Charachters/Objects/Couch/sprite_0.png" id="9_xwwho"]
+[ext_resource type="Texture2D" uid="uid://bt173774s2kxl" path="res://Charachters/Objects/TheBrick/New Piskel(1).png" id="10_l3u27"]
+[ext_resource type="Texture2D" uid="uid://bbfin5pa2xudl" path="res://Charachters/Objects/Hose/sprite_0.png" id="11_1lb8q"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_l7bhi")
@@ -138,6 +140,35 @@ Cost: 3
 Napping Time. The Couhc increases the time for all emenies effects by one second."
 texture_normal = ExtResource("9_xwwho")
 
+[node name="BrickButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 497.0
+offset_top = 377.0
+offset_right = 537.0
+offset_bottom = 417.0
+tooltip_text = "The Brick
+Cost: 1
+Health: 3
+
+An outlawed weapon, only used by the desperate and 
+cruel.
+
+If destroyed, deals two damage to all enemies."
+texture_normal = ExtResource("10_l3u27")
+
+[node name="Hose" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 573.0
+offset_top = 378.0
+offset_right = 613.0
+offset_bottom = 418.0
+tooltip_text = "Garden Hose
+Health: 10
+Cost: 3
+
+Always seeks the weakest crops in the field. Deals one Damage every two seconds, but targest the enemy with the lowest health."
+texture_normal = ExtResource("11_1lb8q")
+
 [connection signal="pressed" from="SinkButton" to="." method="_on_sink_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CalendarButton" to="." method="_on_calendar_button_pressed"]
@@ -146,3 +177,5 @@ texture_normal = ExtResource("9_xwwho")
 [connection signal="pressed" from="CoffeMakerButton" to="." method="_on_coffe_maker_button_pressed"]
 [connection signal="pressed" from="ShowerButton" to="." method="_on_shower_button_pressed"]
 [connection signal="pressed" from="Couch" to="." method="_on_couch_pressed"]
+[connection signal="pressed" from="BrickButton" to="." method="_on_brick_button_pressed"]
+[connection signal="pressed" from="Hose" to="." method="_on_hose_pressed"]

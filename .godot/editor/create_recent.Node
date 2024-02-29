@@ -2,9 +2,9 @@ TextureButton
 AnimatedSprite2D
 AudioStreamPlayer2D
 Timer
+Sprite2D
 TextureProgressBar
 Button
 RichTextLabel
-Sprite2D
 TileMap
 ProgressBar

@@ -32,7 +32,6 @@ func _on_timer_timeout():
 	
 func takeDamage(amount) -> void:
 	health = health - amount
-	print(health)
 	if health <= 0:
 		if player == 1:
 			GameLogic.player1Objects.erase(self)

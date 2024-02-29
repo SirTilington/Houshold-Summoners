@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmi4m56c4tusc"]
+
+[ext_resource type="Texture2D" uid="uid://bbfin5pa2xudl" path="res://Charachters/Objects/Hose/sprite_0.png" id="1_6nmce"]
+[ext_resource type="Texture2D" uid="uid://bxlcsd864lkrr" path="res://Charachters/Objects/Hose/sprite_1.png" id="2_xxwec"]
+[ext_resource type="Script" path="res://Charachters/Objects/Hose/Hose.gd" id="3_wpo0q"]
+[ext_resource type="AudioStream" uid="uid://suohate74hdf" path="res://Charachters/Objects/Hose/watering-the-garden-6715.mp3" id="4_f3thl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6axc8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6nmce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xxwec")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_8q1ii"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vv0at"]
+gradient = SubResource("Gradient_8q1ii")
+width = 32
+height = 10
+
+[node name="Hose" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_6axc8")
+script = ExtResource("3_wpo0q")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_f3thl")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -15.0
+offset_top = 17.0
+offset_right = 15.0
+offset_bottom = 18.0
+max_value = 20.0
+value = 20.0
+texture_progress = SubResource("GradientTexture2D_vv0at")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
