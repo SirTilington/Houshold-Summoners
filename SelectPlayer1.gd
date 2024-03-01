@@ -24,138 +24,116 @@ var brick = preload("res://Charachters/Objects/TheBrick/the_brick.tscn").instant
 var brickSelected = false
 var hose = preload("res://Charachters/Objects/Hose/hose.tscn").instantiate()
 var hoseSelected =  false
+var trashCan = preload("res://Charachters/Objects/Trashcan/trashcan.tscn").instantiate()
+var trashCanSelected = false
 
 func _ready():
 	redFrame.texture = redFramePNG
 	redFrame.position = Vector2(16, 16)
+	if GameLogic.player1Finished:
+		get_node("PlayerLabels").text = "Player 2"
 
 func _on_sink_button_pressed():
 	if sinkSelected:
-		refundPoints(1)
+		removeFromGame(sink)
 		sinkSelected = false
-		GameLogic.player1Objects.erase(sink)
-		for i in get_node("SinkButton").get_children():
-			i.queue_free()
+		get_node("SinkButton").get_child(0).queue_free()
+
 	else:
-		if pointsMax - pointsSpend >= 1:
-			spendPoints(1)
+		if addToGame(sink):
 			sinkSelected = true
-			GameLogic.player1Objects.append(sink)
 			get_node("SinkButton").add_child(redFrame.duplicate())
 			
 func _on_hose_pressed():
 	if hoseSelected:
-		refundPoints(2)
+		removeFromGame(hose)
 		hoseSelected = false
-		GameLogic.player1Objects.erase(hose)
-		for i in get_node("Hose").get_children():
-			i.queue_free()
+		get_node("Hose").get_child(0).queue_free()
 	else:
-		if pointsMax - pointsSpend >= 2:
-			spendPoints(2)
+		if addToGame(hose):
 			hoseSelected = true
-			GameLogic.player1Objects.append(hose)
 			get_node("Hose").add_child(redFrame.duplicate())
 
 func _on_calendar_button_pressed():
 	if calendarSelected:
-		refundPoints(3)
+		removeFromGame(calendar)
 		calendarSelected = false
-		GameLogic.player1Objects.erase(calendar)
-		for i in get_node("CalendarButton").get_children():
-			i.queue_free()
+		get_node("CalendarButton").get_child(0).queue_free()
 	else:
-		if pointsMax - pointsSpend >= 3:
-			spendPoints(3)
+		if addToGame(calendar):
 			calendarSelected = true
-			GameLogic.player1Objects.append(calendar)
 			get_node("CalendarButton").add_child(redFrame.duplicate())
 
 func _on_texture_button_pressed():
 	if tireSelected:
-		refundPoints(3)
+		removeFromGame(tire)
 		tireSelected = false
-		GameLogic.player1Objects.erase(tire)
-		for i in get_node("TextureButton").get_children():
-			i.queue_free()
+		get_node("TextureButton").get_child(0).queue_free()
 	else:
-		if pointsMax - pointsSpend >= 3:
-			spendPoints(3)
+		if addToGame(tire):
 			tireSelected = true
-			GameLogic.player1Objects.append(tire)
 			get_node("TextureButton").add_child(redFrame.duplicate())
 	
 func _on_iron_button_pressed():
 	if ironSelected:
-		refundPoints(2)
+		removeFromGame(iron)
 		ironSelected = false
-		GameLogic.player1Objects.erase(iron)
-		for i in get_node("IronButton").get_children():
-			i.queue_free()
+		get_node("IronButton").get_child(0).queue_free()
 	else:
-		if pointsMax - pointsSpend >= 2:
-			spendPoints(2)
+		if addToGame(iron):
 			ironSelected = true
-			GameLogic.player1Objects.append(iron)
 			get_node("IronButton").add_child(redFrame.duplicate())
 
 func _on_coffe_maker_button_pressed():
 	if coffeMakerSelected:
-		refundPoints(3)
+		removeFromGame(coffeMaker)
 		coffeMakerSelected = false
-		GameLogic.player1Objects.erase(coffeMaker)
-		for i in get_node("CoffeMakerButton").get_children():
-			i.queue_free()
+		get_node("CoffeMakerButton").get_child(0).queue_free()
 	else:
-		if pointsMax - pointsSpend >= 3:
-			spendPoints(3)
+		if addToGame(coffeMaker):
 			coffeMakerSelected = true
-			GameLogic.player1Objects.append(coffeMaker)
 			get_node("CoffeMakerButton").add_child(redFrame.duplicate())
-			
 
 func _on_shower_button_pressed():
 	if showerSelected:
-		refundPoints(5)
+		removeFromGame(shower)
 		showerSelected = false
-		GameLogic.player1Objects.erase(shower)
-		for i in get_node("ShowerButton").get_children():
-			i.queue_free()
+		get_node("ShowerButton").get_child(0).queue_free()
 	else:
-		if pointsMax - pointsSpend >= 5:
-			spendPoints(5)
+		if addToGame(shower):
 			showerSelected = true
-			GameLogic.player1Objects.append(shower)
 			get_node("ShowerButton").add_child(redFrame.duplicate())
 			
 func _on_couch_pressed():
 	if couchSelected:
-		refundPoints(3)
+		removeFromGame(couch)
 		couchSelected = false
-		GameLogic.player1Objects.erase(couch)
-		for i in get_node("Couch").get_children():
-			i.queue_free()
+		get_node("Couch").get_child(0).queue_free()
 	else:
-		if pointsMax - pointsSpend >= 3:
-			spendPoints(3)
+		if addToGame(couch):
 			couchSelected = true
-			GameLogic.player1Objects.append(couch)
 			get_node("Couch").add_child(redFrame.duplicate())
 	
 func _on_brick_button_pressed():
 	if brickSelected:
-		refundPoints(3)
+		removeFromGame(brick)
 		brickSelected = false
-		GameLogic.player1Objects.erase(brick)
-		for i in get_node("BrickButton").get_children():
-			i.queue_free()
+		get_node("BrickButton").get_child(0).queue_free()
 	else:
-		if pointsMax - pointsSpend >= 3:
-			spendPoints(3)
+		if addToGame(brick):
 			brickSelected = true
-			GameLogic.player1Objects.append(brick)
 			get_node("BrickButton").add_child(redFrame.duplicate())
 
+func _on_trashcan_button_pressed():
+	if trashCanSelected:
+		removeFromGame(trashCan)
+		trashCanSelected = true
+		get_node("TrashcanButton").get_child(0).queue_free()
+	else:
+		if addToGame(trashCan):
+			trashCanSelected = true
+			get_node("TrashcanButton").add_child(redFrame.duplicate())
+			
 func spendPoints(amount) -> void:
 	pointsSpend = pointsSpend + amount
 	get_node("pointsSpendLabel").text = "Points Spend: " + str(pointsSpend) + "/10"
@@ -167,9 +145,42 @@ func refundPoints(amount) -> void:
 	get_node("ProgressBar").value = pointsSpend
 	
 
+func addToGame(node) -> bool:
+	if pointsMax - pointsSpend >= node.cost:
+		if GameLogic.player1Finished:
+			GameLogic.player2Objects.append(node)
+			spendPoints(node.cost)
+			return true
+		else:
+			GameLogic.player1Objects.append(node)
+			spendPoints(node.cost)
+			return true
+	else:
+		return false
+		
+func removeFromGame(node) -> void:
+	if GameLogic.player1Finished:
+		GameLogic.player2Objects.erase(node)
+		refundPoints(node.cost)
+	else:
+		GameLogic.player1Objects.erase(node)
+		refundPoints(node.cost)
+
 func _on_start_button_pressed():
-	GameLogic.getReady()
-	get_tree().change_scene_to_file("res://main.tscn")
+	if GameLogic.hotseat:
+		if GameLogic.player1Finished:
+			GameLogic.getReady()
+			get_tree().change_scene_to_file("res://main.tscn")
+		else:
+			GameLogic.player1Finished = true
+			get_tree().reload_current_scene()
+	else:
+		GameLogic.getReady()
+		get_tree().change_scene_to_file("res://main.tscn")
+	
+
+
+
 
 
 

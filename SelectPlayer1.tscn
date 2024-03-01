@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://sod7jeqqo5gt"]
+[gd_scene load_steps=13 format=3 uid="uid://sod7jeqqo5gt"]
 
 [ext_resource type="Script" path="res://SelectPlayer1.gd" id="1_l7bhi"]
 [ext_resource type="Texture2D" uid="uid://i0vbrparbe0a" path="res://Charachters/Objects/Sink/sprite_1.png" id="1_la10i"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b5dyt5jw83ahu" path="res://Charachters/Objects/Couch/sprite_0.png" id="9_xwwho"]
 [ext_resource type="Texture2D" uid="uid://bt173774s2kxl" path="res://Charachters/Objects/TheBrick/New Piskel(1).png" id="10_l3u27"]
 [ext_resource type="Texture2D" uid="uid://bbfin5pa2xudl" path="res://Charachters/Objects/Hose/sprite_0.png" id="11_1lb8q"]
+[ext_resource type="Texture2D" uid="uid://bainm2fu6hb1i" path="res://Charachters/Objects/Trashcan/sprite_0.png" id="12_m8vq0"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_l7bhi")
@@ -22,11 +23,11 @@ offset_top = 441.0
 offset_right = 605.0
 offset_bottom = 473.0
 tooltip_text = "Sink
-
 Health: 10
-Cost: 1
+Cost: 2
+
 Will drip your enemies away. Let that sink in.
-Deals one Damage every two seconds to an random enemy. "
+Deals one Damage every two seconds to a random enemy. "
 texture_normal = ExtResource("1_la10i")
 
 [node name="StartButton" type="Button" parent="."]
@@ -47,7 +48,7 @@ Health: 20
 Cost: 3
 
 Todays your day...or not.
-If a target is choosen it random, the calendar will always get picked."
+If a target is chosen at random, the calendar will always get picked."
 texture_normal = ExtResource("3_0urr5")
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -74,7 +75,7 @@ tooltip_text = "Iron
 Health: 12
 Cost: 3
 
-Iron out your past mistakes. Heals a random alley every fice seconds for four points."
+Iron out your past mistakes. Heals a random alley every five seconds for four points."
 texture_normal = ExtResource("5_wnles")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -101,15 +102,15 @@ texture = ExtResource("6_pixy4")
 
 [node name="CoffeMakerButton" type="TextureButton" parent="."]
 texture_filter = 1
-offset_left = 653.0
-offset_top = 439.0
-offset_right = 693.0
-offset_bottom = 479.0
+offset_left = 650.0
+offset_top = 440.0
+offset_right = 690.0
+offset_bottom = 480.0
 tooltip_text = "Coffemaker
 Health: 12
 Cost: 3
 
-An ancient device to activate the spirit of man and machine. Every five seconds, the effect of one of your objects will get activated."
+An ancient device to activate the spirit of man and machine. Every two seconds, the effect of one of your objects will get activated."
 texture_normal = ExtResource("7_8ymw8")
 
 [node name="ShowerButton" type="TextureButton" parent="."]
@@ -122,7 +123,7 @@ tooltip_text = "Shower
 Health: 13
 Cost: 5
 
-The shower thinks that she is the better sink. Maybe shes right.
+The shower thinks that she is the better sink. Maybe she`s right.
 
 Deals one damage every two seconds, but to every enemy."
 texture_normal = ExtResource("8_v542o")
@@ -137,15 +138,15 @@ tooltip_text = "Couch
 Health: 5
 Cost: 3
 
-Napping Time. The Couhc increases the time for all emenies effects by one second."
+Napping Time. The couch increases the time for all emenies effects by one second."
 texture_normal = ExtResource("9_xwwho")
 
 [node name="BrickButton" type="TextureButton" parent="."]
 texture_filter = 1
-offset_left = 497.0
-offset_top = 377.0
-offset_right = 537.0
-offset_bottom = 417.0
+offset_left = 507.0
+offset_top = 375.0
+offset_right = 547.0
+offset_bottom = 415.0
 tooltip_text = "The Brick
 Cost: 1
 Health: 3
@@ -159,15 +160,37 @@ texture_normal = ExtResource("10_l3u27")
 [node name="Hose" type="TextureButton" parent="."]
 texture_filter = 1
 offset_left = 573.0
-offset_top = 378.0
+offset_top = 374.0
 offset_right = 613.0
-offset_bottom = 418.0
+offset_bottom = 414.0
 tooltip_text = "Garden Hose
 Health: 10
 Cost: 3
 
-Always seeks the weakest crops in the field. Deals one Damage every two seconds, but targest the enemy with the lowest health."
+Always seeks out the weakest crops in the field. Deals one Damage every two seconds, but targest the enemy with the lowest health."
 texture_normal = ExtResource("11_1lb8q")
+
+[node name="PlayerLabels" type="RichTextLabel" parent="."]
+offset_left = 470.0
+offset_top = 63.0
+offset_right = 709.0
+offset_bottom = 103.0
+scale = Vector2(2, 2)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Player 1 "
+
+[node name="TrashcanButton" type="TextureButton" parent="."]
+offset_left = 650.0
+offset_top = 380.0
+offset_right = 690.0
+offset_bottom = 420.0
+tooltip_text = "Trashcan
+Health: 10, but max. Health 100
+Cost: 5
+
+He is done with the world, and revels in its downfall.
+Gets healed for five points whenever an object gets destroyed."
+texture_normal = ExtResource("12_m8vq0")
 
 [connection signal="pressed" from="SinkButton" to="." method="_on_sink_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
@@ -179,3 +202,4 @@ texture_normal = ExtResource("11_1lb8q")
 [connection signal="pressed" from="Couch" to="." method="_on_couch_pressed"]
 [connection signal="pressed" from="BrickButton" to="." method="_on_brick_button_pressed"]
 [connection signal="pressed" from="Hose" to="." method="_on_hose_pressed"]
+[connection signal="pressed" from="TrashcanButton" to="." method="_on_trashcan_button_pressed"]

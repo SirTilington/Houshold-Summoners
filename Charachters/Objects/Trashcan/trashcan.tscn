@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhs2div0ddg0a"]
+
+[ext_resource type="Texture2D" uid="uid://bainm2fu6hb1i" path="res://Charachters/Objects/Trashcan/sprite_0.png" id="1_s5q5u"]
+[ext_resource type="Texture2D" uid="uid://v0dm3q8e2wn3" path="res://Charachters/Objects/Trashcan/sprite_1.png" id="2_b4yhn"]
+[ext_resource type="Script" path="res://Charachters/Objects/Trashcan/Trashcan.gd" id="3_8hbrt"]
+[ext_resource type="AudioStream" uid="uid://0west5gu6cnd" path="res://Charachters/Objects/Trashcan/sniffing-a-stinky-fart-95212.mp3" id="4_k4fer"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lkkiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s5q5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b4yhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b4yhn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_yetxq"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7moox"]
+gradient = SubResource("Gradient_yetxq")
+width = 32
+height = 10
+
+[node name="Trashcan" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(15.5, 15.5)
+scale = Vector2(0.96875, 0.96875)
+sprite_frames = SubResource("SpriteFrames_lkkiw")
+script = ExtResource("3_8hbrt")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k4fer")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -15.0
+offset_top = 17.0
+offset_right = 15.0
+offset_bottom = 18.0
+max_value = 20.0
+value = 20.0
+texture_progress = SubResource("GradientTexture2D_7moox")

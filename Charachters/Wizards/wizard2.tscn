@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://2a2jky44asoa"]
+
+[ext_resource type="Texture2D" uid="uid://d3balcyx7x0u0" path="res://Charachters/Wizards/sprite_2.png" id="1_kmmte"]
+[ext_resource type="Texture2D" uid="uid://t6gbtq7dvvua" path="res://Charachters/Wizards/sprite_3.png" id="2_vwv2e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tpibw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kmmte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vwv2e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Wizard" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_tpibw")
+autoplay = "default"

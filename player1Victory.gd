@@ -11,4 +11,6 @@ func _ready():
 func _on_button_pressed():
 	GameLogic.player1Objects.clear()
 	GameLogic.player2Objects.clear()
+	GameLogic.player1Finished = false
+	GameLogic.hotseat = false
 	get_tree().change_scene_to_file("res://main_menu.tscn")

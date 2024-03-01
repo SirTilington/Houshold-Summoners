@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dofxw3ily3ctp"]
+
+[ext_resource type="AudioStream" uid="uid://2i7vdr3ta3e4" path="res://desert-shimmer-24684.mp3" id="1_3ibqc"]
+
+[node name="CentralThemes" type="AudioStreamPlayer"]
+stream = ExtResource("1_3ibqc")
+autoplay = true

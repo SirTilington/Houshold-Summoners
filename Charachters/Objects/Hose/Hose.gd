@@ -5,6 +5,7 @@ var player
 var health = 10
 var maxHealth = 10
 var target
+var cost = 3
 
 
 func _ready():

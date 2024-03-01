@@ -5,6 +5,7 @@ var player
 var health = 10
 var maxHealth = 10
 var target
+var cost = 2
 
 
 func _ready():
@@ -26,12 +27,10 @@ func _on_timer_timeout():
 	effect()
 	get_node("AudioStreamPlayer2D").play()
 	play("default")	
-	print(get_node("Timer").wait_time)
-	print(Time.get_ticks_msec())
+
 	
 func takeDamage(amount) -> void:
 	health = health - amount
-	print(health)
 	if health <= 0:
 		if player == 1:
 			GameLogic.player1Objects.erase(self)

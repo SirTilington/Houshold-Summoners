@@ -4,6 +4,7 @@ var health = 20
 var maxHealth = 20
 var player
 var priorityTarget = true
+var cost = 3
 
 func _ready():
 	get_node("TextureProgressBar").max_value = maxHealth

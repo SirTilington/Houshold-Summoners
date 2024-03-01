@@ -5,7 +5,7 @@ var player
 var health = 5
 var maxHealth = 5
 var target
-
+var cost = 3
 
 func _ready():
 	get_node("TextureProgressBar").max_value = maxHealth
@@ -13,7 +13,6 @@ func _ready():
 	timer.wait_time = 0.5
 	timer.one_shot = true
 	timer.start()
-	
 	
 func effect() -> void:
 	if player == 1:

@@ -6,6 +6,7 @@ var player
 var health = 12
 var maxHealth = 12
 var target
+var cost = 2
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

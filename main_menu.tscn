@@ -446,17 +446,17 @@ sources/1 = SubResource("TileSetAtlasSource_lm1dv")
 script = ExtResource("1_aocoh")
 
 [node name="SPButto" type="Button" parent="."]
-offset_left = 484.0
-offset_top = 106.0
-offset_right = 775.0
-offset_bottom = 159.0
+offset_left = 487.0
+offset_top = 264.0
+offset_right = 778.0
+offset_bottom = 317.0
 text = "Singleplayer"
 
 [node name="MPButton" type="Button" parent="."]
-offset_left = 481.0
-offset_top = 204.0
-offset_right = 772.0
-offset_bottom = 249.0
+offset_left = 489.0
+offset_top = 336.0
+offset_right = 780.0
+offset_bottom = 381.0
 text = "Hotseat"
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -473,4 +473,15 @@ texture = ExtResource("3_85mmp")
 position = Vector2(1171, 505)
 texture = ExtResource("4_h8p5o")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 501.0
+offset_top = 82.0
+offset_right = 763.0
+offset_bottom = 148.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 23
+text = "Household Summoners
+"
+
 [connection signal="pressed" from="SPButto" to="." method="_on_sp_butto_pressed"]
+[connection signal="pressed" from="MPButton" to="." method="_on_mp_button_pressed"]

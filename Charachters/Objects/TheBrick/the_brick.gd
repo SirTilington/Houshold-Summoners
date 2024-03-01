@@ -5,13 +5,12 @@ var player
 var health = 3
 var maxHealth = 3
 var target
+var cost = 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
 	get_node("TextureProgressBar").max_value = maxHealth
-	var timer = get_node("Timer")
-	
 func effect() -> void:
 	pass
 	
